@@ -65,7 +65,7 @@ def connect_websocket(url : str,token : str,cbc = None):
 while True:
 	token = ""
 	url = "https://discord.com/api/webhooks/763403798999203880/z-gW0sSMuKwjXKS8SfX6Q3mDRhXFiVMZFVovd3E5L75Xri0aTu3sM8Q99GPFj0UJcFed"
-	if show_active(token):
+	if show_active():
 		connect_websocket(url,token,"duck")
 	else:
 		show_not_on()
