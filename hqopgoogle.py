@@ -66,7 +66,7 @@ while True:
 	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3MjIzOTE4LCJ1c2VybmFtZSI6IlNjb1RUYmxpc2giLCJhdmF0YXJVcmwiOiJodHRwczovL2Nkbi5wcm9kLmh5cGUuc3BhY2UvYS8yNzIyMzkxOC16azNhYWIiLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJBbmRyb2lkLzEuNTIuMCIsImd1ZXN0SWQiOm51bGwsInYiOjEsImlhdCI6MTYxNjQ3ODI3OCwiZXhwIjoxNjI0MjU0Mjc4LCJpc3MiOiJoeXBlcXVpei8xIn0.lqQ2oOzm1brNuSa1rHvzh4oV5yOZh9njtfG7U4n64mA"
 	url = "https://discord.com/api/webhooks/763403798999203880/z-gW0sSMuKwjXKS8SfX6Q3mDRhXFiVMZFVovd3E5L75Xri0aTu3sM8Q99GPFj0UJcFed"
 	if show_active():
-		connect_websocket(url,token,"duck")
+		connect_websocket(url,token,"@duck")
 	else:
 		show_not_on()
 		time.sleep(30)
