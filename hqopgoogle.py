@@ -67,7 +67,7 @@ def connect_websocket(url : str,token : str,cbc = None):
 
 while True:
 	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2ODg5NDU2LCJ1c2VybmFtZSI6ImNoYWRMYW0iLCJhdmF0YXJVcmwiOiJodHRwczovL2Nkbi5wcm9kLmh5cGUuc3BhY2UvZGEvZ29sZC5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpUGhvbmU4LDIiLCJndWVzdElkIjpudWxsLCJ2IjoxLCJpYXQiOjE2MTkxMTE0MTUsImV4cCI6MTYyNjg4NzQxNSwiaXNzIjoiaHlwZXF1aXovMSJ9.jmRVRfC3TFsNz8WgMdPPtWS0NBjdH_nTxVoqsBmwWBs"
-	url = "https://discord.com/api/webhooks/763403798999203880/z-gW0sSMuKwjXKS8SfX6Q3mDRhXFiVMZFVovd3E5L75Xri0aTu3sM8Q99GPFj0UJcFed"
+	url = "https://discord.com/api/webhooks/835083147761811467/4ZVK4BxJ_zIxgtG2zUtWoCabc13tp4aP0KA-LMfeAzliTDesgQrgw6JMtxbdeC3fjY0G"
 	if show_active():
 		connect_websocket(url,token,"@duck")
 	else:
