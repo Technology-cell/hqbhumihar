@@ -20,9 +20,10 @@ def show_active():
 	response = requests.get(url=url).json()
 	return response["active"]
 
-def connect_websocket(url : str,url2 : str,token : str,cbc = None,cbc2 = None):
+def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None,cbc2 = None,cbc3 = None):
 	hook = Webhook(url)
 	hook2 = Webhook(url2)
+	hook3 = Webhook(url3)
 	headers = {"Authorization": f"Bearer {token}"}
 	url = requests.get(url="https://api-quiz.hype.space/shows/now").json()["broadcast"]["socketUrl"].replace("https","wss")
 	websocket = WebSocket(url)
@@ -62,18 +63,21 @@ def connect_websocket(url : str,url2 : str,token : str,cbc = None,cbc2 = None):
 				embed.set_footer(text="</> by Kumar Dhruv",icon_url="https://cdn.discordapp.com/attachments/827177417092366396/834785101153566720/IMG_20210130_095034.jpg")
 				hook.send(embed=embed)
 				hook2.send(embed=embed)
+				hook3.send(embed=embed)
 				if cbc == None:
 					print("No Crowd Command Found")
 				else:
 					hook.send(cbc)
 					hook2.send(cbc2)
+					hook3.send(cbc3)
 
 while True:
 	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2ODg5NDU2LCJ1c2VybmFtZSI6ImNoYWRMYW0iLCJhdmF0YXJVcmwiOiJodHRwczovL2Nkbi5wcm9kLmh5cGUuc3BhY2UvZGEvZ29sZC5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpUGhvbmU4LDIiLCJndWVzdElkIjpudWxsLCJ2IjoxLCJpYXQiOjE2MTkxMTE0MTUsImV4cCI6MTYyNjg4NzQxNSwiaXNzIjoiaHlwZXF1aXovMSJ9.jmRVRfC3TFsNz8WgMdPPtWS0NBjdH_nTxVoqsBmwWBs"
 	url = "https://discord.com/api/webhooks/835083147761811467/4ZVK4BxJ_zIxgtG2zUtWoCabc13tp4aP0KA-LMfeAzliTDesgQrgw6JMtxbdeC3fjY0G"
 	url2 = "https://discord.com/api/webhooks/763403798999203880/z-gW0sSMuKwjXKS8SfX6Q3mDRhXFiVMZFVovd3E5L75Xri0aTu3sM8Q99GPFj0UJcFed"
+	url3 = "https://discord.com/api/webhooks/835764960344670228/B4F2PTg5FCNzyMhwudqtC3Oz0-vbvY6AMToIPm987IkBTWpO9keQ0CZMR1oqulNUI4He"
 	if show_active():
-		connect_websocket(url,url2,token,"!duck","@duck")
+		connect_websocket(url,url2,url3,token,"!duck","@duck","+mt")
 	else:
 		show_not_on()
 		time.sleep(30)
