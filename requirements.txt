@@ -5,3 +5,4 @@ lomond
 unidecode
 discord
 requests
+DCHQWEB
