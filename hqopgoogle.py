@@ -47,7 +47,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None,cbc
 				embed.add_field(name=f"**{question}**",value=f"**[Search with options]({url}+{option1}+{option2}+{option3})**")
 				embed.add_field(name="**Option 1**",value=f"**{option1}**")
 				embed.add_field(name="**Option 2**",value=f"**{option2}**")
-						      
+				embed.add_field(name="**Option 3**",value=f"**{option3}**") 
 				embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/827177417092366396/834782681648595005/a7372eaaeafa289f28534ad39d96d517.gif")
 				search = requests.get(url=url)
 				searchop = requests.get(url=url + "+" + option1 + "+" + option2 + "+" + option3)
