@@ -43,7 +43,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None,cbc
 				option2 = f"{answers[1]}"
 				option3 = f"{answers[2]}"
 				url="https://www.google.com/search?q=" + question
-				embed = discord.Embed(title=f"**Question {qno} out of {totalq}**,description="",color=000000)
+				embed = discord.Embed(title=f"**Question {qno} out of {totalq}**",description="",color=000000)
 				embed.add_field(name=f"**{question}**",value=f"**[Search with options]({url}+{option1}+{option2}+{option3})**")
 				embed.add_field(name="**Option 1**",value=f"**{option1}**")
 				embed.add_field(name="**Option 2**",value=f"**{option2}**")
