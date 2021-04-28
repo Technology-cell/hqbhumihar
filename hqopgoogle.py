@@ -35,12 +35,16 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None,cbc
 			data = json.loads(message)
 			if data["type"] == "question":
 				question = data["question"]
+				qno = data["questionNumber"]
+				totalq = data["questionCount"]
 				question = str(question).replace(" ","+")
 				answers = [unidecode(ans["text"]) for ans in data["answers"]]
 				option1 = f"{answers[0]}"
 				option2 = f"{answers[1]}"
 				option3 = f"{answers[2]}"
 				url="https://www.google.com/search?q=" + question
+				embed = discord.Embed(title=f"**Question {qno} out of {totalq}**,description="",color=000000) 
+						
 				search = requests.get(url=url)
 				searchop = requests.get(url=url + "+" + option1 + "+" + option2 + "+" + option3)
 				res = str(search.text)
