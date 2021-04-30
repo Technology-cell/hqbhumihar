@@ -34,20 +34,23 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None,cbc
 			message = msg.text
 			data = json.loads(message)
 			if data["type"] == "question":
-				question = data["question"]
+				questio = data["question"]
 				qno = data["questionNumber"]
 				totalq = data["questionCount"]
-				question = str(question).replace(" ","+")
+				question = str(questio).replace(" ","+")
 				answers = [unidecode(ans["text"]) for ans in data["answers"]]
 				option1 = f"{answers[0]}"
 				option2 = f"{answers[1]}"
 				option3 = f"{answers[2]}"
+				op1 = option1.replace(" ","+")
+				op2 = option2.replace(" ","+")
+				op3 = option3.replace(" ","+")
 				url="https://www.google.com/search?q=" + question
 				embed = discord.Embed(title=f"**Question {qno} out of {totalq}**",description="",color=000000)
-				embed.add_field(name=f"**{question}**",value=f"**[Search with options]({url}+{option1}+{option2}+{option3})**")
-				embed.add_field(name="**Option 1**",value=f"**[{option1}]({url}+{option1})**")
-				embed.add_field(name="**Option 2**",value=f"**[{option2}]({url}+{option2})**")
-				embed.add_field(name="**Option 3**",value=f"**[{option3}]({url}+{option3})**")
+				embed.add_field(name=f"**{questio}**",value=f"**[Search with options]({url}+{op1}+{op2}+{op3})**")
+				embed.add_field(name="**Option 1**",value=f"**[{option1}]({url}+{op1})**")
+				embed.add_field(name="**Option 2**",value=f"**[{option2}]({url}+{op2})**")
+				embed.add_field(name="**Option 3**",value=f"**[{option3}]({url}+{op3})**")
 				embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
 				#hook.send(embed=embed)
 				hook2.send(embed=embed)
