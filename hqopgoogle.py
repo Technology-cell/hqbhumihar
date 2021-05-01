@@ -85,8 +85,8 @@ def connect_websocket(url : str,token : str,cbc = None):
 				answer = data["answerId"]
 				if name == "":
 					uname = "Marvel Owner"
-				if name == "":
-					uname = ""
+				if name == "Lucas8002":
+					uname = "Kumar Dhruv"
 				if name == "":
 					uname = ""
 				if name == "":
