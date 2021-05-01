@@ -83,16 +83,24 @@ def connect_websocket(url : str,token : str,cbc = None):
 			if data["type"] == "answered":
 				name = data["username"]
 				answer = data["answerId"]
-				if name == "":
+				if name == "rosemiya":
 					uname = "Marvel Owner"
 				if name == "Lucas8002":
 					uname = "Kumar Dhruv"
-				if name == "":
-					uname = ""
-				if name == "":
-					uname = ""
-				if name == "":
-					uname = ""
+				if name == "elisabenson35":
+					uname = "Don Uday Bhai"
+				if name == "lunisiko":
+					uname = "VermA"
+				if name == "vitkar2":
+					uname = "K.D."
+				if name == "tesla1999":
+					uname = "Spiderman 1"
+				if name == "teslahero04":
+					uname = "Spiderman 2"
+				if name == "darrymask":
+					uname = "Spiderman 3"
+				if name == "maxvinila":
+					uname = "R K"
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option 1**",color=000000)
 					hook.send(embed=embed)
