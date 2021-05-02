@@ -22,7 +22,7 @@ def show_active():
 
 def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 	marvel = Webhook(url)
-	answer = Webhook(url2)
+	fetch = Webhook(url2)
 	mafia = Webhook(url3)
 	headers = {"Authorization": f"Bearer {token}"}
 	url = requests.get(url="https://api-quiz.hype.space/shows/now").json()["broadcast"]["socketUrl"].replace("https","wss")
