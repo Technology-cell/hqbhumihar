@@ -51,7 +51,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 				embed.add_field(name="**Option 1**",value=f"**[{option1}]({url}+{op1})**")
 				embed.add_field(name="**Option 2**",value=f"**[{option2}]({url}+{op2})**")
 				embed.add_field(name="**Option 3**",value=f"**[{option3}]({url}+{op3})**")
-				embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
+				embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 				marvel.send(embed=embed)
 				search = requests.get(url=url)
 				searchop = requests.get(url=url + "+" + option1 + "+" + option2 + "+" + option3)
@@ -100,17 +100,17 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 					uname = "R K"
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :one:**",color=000000)
-					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					marvel.send(embed=embed)
 					fetch.send("w1")
 				if answer == answersid[1]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :two:**",color=000000)
-					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					marvel.send(embed=embed)
 					fetch.send("w2")
 				if answer == answersid[2]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :three:**",color=000000)
-					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					marvel.send(embed=embed)
 					fetch.send("w3")
 			if data["type"] == "questionSummary":
