@@ -20,7 +20,7 @@ def show_active():
 	response = requests.get(url=url).json()
 	return response["active"]
 
-def connect_websocket(url : str,token : str,cbc = None):
+def connect_websocket(url : str,url2 : str,token : str,cbc = None):
 	hook = Webhook(url)
 	headers = {"Authorization": f"Bearer {token}"}
 	url = requests.get(url="https://api-quiz.hype.space/shows/now").json()["broadcast"]["socketUrl"].replace("https","wss")
@@ -46,14 +46,11 @@ def connect_websocket(url : str,token : str,cbc = None):
 				op3 = option3.replace(" ","+")
 				url="https://www.google.com/search?q=" + question
 				embed = discord.Embed(title=f"**Question {qno} out of {totalq}**",description=f"**[{questio}]({url})\n\n[Search with options]({url}+{op1}+{op2}+{op3})**",color=000000)
-				#embed.add_field(name=f"**{questio}**",value=f"**[Search with options]({url}+{op1}+{op2}+{op3})**")
 				embed.add_field(name="**Option 1**",value=f"**[{option1}]({url}+{op1})**")
 				embed.add_field(name="**Option 2**",value=f"**[{option2}]({url}+{op2})**")
 				embed.add_field(name="**Option 3**",value=f"**[{option3}]({url}+{op3})**")
 				embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
 				hook.send(embed=embed)
-				#hook2.send(embed=embed)
-				#hook3.send(embed=embed)
 				search = requests.get(url=url)
 				searchop = requests.get(url=url + "+" + option1 + "+" + option2 + "+" + option3)
 				res = str(search.text)
@@ -76,10 +73,6 @@ def connect_websocket(url : str,token : str,cbc = None):
 				embed.set_footer(text="</> by Kumar Dhruv",icon_url="https://cdn.discordapp.com/attachments/827177417092366396/834785101153566720/IMG_20210130_095034.jpg")
 				hook.send(cbc)
 				hook.send(embed=embed)
-				#hook2.send(cbc2)
-				#hook2.send(embed=embed)
-				#hook3.send(cbc3)
-				#hook3.send(embed=embed)
 			if data["type"] == "answered":
 				name = data["username"]
 				answer = data["answerId"]
@@ -102,14 +95,20 @@ def connect_websocket(url : str,token : str,cbc = None):
 				if name == "maxvinila":
 					uname = "R K"
 				if answer == answersid[0]:
-					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option 1**",color=000000)
+					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :one:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
 					hook.send(embed=embed)
+					hook2.send("w1")
 				if answer == answersid[1]:
-					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option 2**",color=000000)
+					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :two:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
 					hook.send(embed=embed)
+					hook2.send("w2")
 				if answer == answersid[2]:
-					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option 3**",color=000000)
+					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :three:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
 					hook.send(embed=embed)
+					hook2.send("w3")
 			if data["type"] == "questionSummary":
 				correct = ""
 				for answer in data["answerCounts"]:
@@ -127,11 +126,10 @@ def connect_websocket(url : str,token : str,cbc = None):
 
 while True:
 	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2ODg5NDU2LCJ1c2VybmFtZSI6ImNoYWRMYW0iLCJhdmF0YXJVcmwiOiJodHRwczovL2Nkbi5wcm9kLmh5cGUuc3BhY2UvZGEvZ29sZC5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpUGhvbmU4LDIiLCJndWVzdElkIjpudWxsLCJ2IjoxLCJpYXQiOjE2MTkxMTE0MTUsImV4cCI6MTYyNjg4NzQxNSwiaXNzIjoiaHlwZXF1aXovMSJ9.jmRVRfC3TFsNz8WgMdPPtWS0NBjdH_nTxVoqsBmwWBs"
-	#url = "https://discord.com/api/webhooks/835083147761811467/4ZVK4BxJ_zIxgtG2zUtWoCabc13tp4aP0KA-LMfeAzliTDesgQrgw6JMtxbdeC3fjY0G"
-	#url = "https://discord.com/api/webhooks/763403798999203880/z-gW0sSMuKwjXKS8SfX6Q3mDRhXFiVMZFVovd3E5L75Xri0aTu3sM8Q99GPFj0UJcFed"
 	url = "https://discord.com/api/webhooks/835764960344670228/B4F2PTg5FCNzyMhwudqtC3Oz0-vbvY6AMToIPm987IkBTWpO9keQ0CZMR1oqulNUI4He"
+	url2 = "https://discord.com/api/webhooks/838271937888780318/jUoH7tbiyE6PZS-FMj34EBJM7CjY0S1NDgiipf_xd36kkbTMoc3ouQyIAMU2EJV6gH01"
 	if show_active():
-		connect_websocket(url,token,"+mt")
+		connect_websocket(url,url2,token,"+mt")
 	else:
 		show_not_on()
 		time.sleep(30)
