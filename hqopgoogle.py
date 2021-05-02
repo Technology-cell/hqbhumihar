@@ -20,9 +20,10 @@ def show_active():
 	response = requests.get(url=url).json()
 	return response["active"]
 
-def connect_websocket(url : str,url2 : str,token : str,cbc = None):
-	hook = Webhook(url)
-	hook2 = Webhook(url2)
+def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
+	marvel = Webhook(url)
+	answer = Webhook(url2)
+	mafia = Webhook(url3)
 	headers = {"Authorization": f"Bearer {token}"}
 	url = requests.get(url="https://api-quiz.hype.space/shows/now").json()["broadcast"]["socketUrl"].replace("https","wss")
 	websocket = WebSocket(url)
@@ -51,7 +52,7 @@ def connect_websocket(url : str,url2 : str,token : str,cbc = None):
 				embed.add_field(name="**Option 2**",value=f"**[{option2}]({url}+{op2})**")
 				embed.add_field(name="**Option 3**",value=f"**[{option3}]({url}+{op3})**")
 				embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
-				hook.send(embed=embed)
+				marvel.send(embed=embed)
 				search = requests.get(url=url)
 				searchop = requests.get(url=url + "+" + option1 + "+" + option2 + "+" + option3)
 				res = str(search.text)
@@ -72,8 +73,10 @@ def connect_websocket(url : str,url2 : str,token : str,cbc = None):
 				embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/827177417092366396/834782681648595005/a7372eaaeafa289f28534ad39d96d517.gif")
 				embed.set_author(name="HQ Trivia",icon_url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
 				embed.set_footer(text="</> by Kumar Dhruv",icon_url="https://cdn.discordapp.com/attachments/827177417092366396/834785101153566720/IMG_20210130_095034.jpg")
-				hook.send(cbc)
-				hook.send(embed=embed)
+				marvel.send(cbc)
+				marvel.send(embed=embed)
+				mafia.send(cbc)
+				mafia.send(embed=embed)
 			if data["type"] == "answered":
 				name = data["username"]
 				answer = data["answerId"]
@@ -98,18 +101,18 @@ def connect_websocket(url : str,url2 : str,token : str,cbc = None):
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
-					hook.send(embed=embed)
-					hook2.send("w1")
+					marvel.send(embed=embed)
+					fetch.send("w1")
 				if answer == answersid[1]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :two:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
-					hook.send(embed=embed)
-					hook2.send("w2")
+					marvel.send(embed=embed)
+					fetch.send("w2")
 				if answer == answersid[2]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :three:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
-					hook.send(embed=embed)
-					hook2.send("w3")
+					marvel.send(embed=embed)
+					fetch.send("w3")
 			if data["type"] == "questionSummary":
 				correct = ""
 				for answer in data["answerCounts"]:
@@ -129,8 +132,9 @@ while True:
 	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI2ODg5NDU2LCJ1c2VybmFtZSI6ImNoYWRMYW0iLCJhdmF0YXJVcmwiOiJodHRwczovL2Nkbi5wcm9kLmh5cGUuc3BhY2UvZGEvZ29sZC5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpUGhvbmU4LDIiLCJndWVzdElkIjpudWxsLCJ2IjoxLCJpYXQiOjE2MTkxMTE0MTUsImV4cCI6MTYyNjg4NzQxNSwiaXNzIjoiaHlwZXF1aXovMSJ9.jmRVRfC3TFsNz8WgMdPPtWS0NBjdH_nTxVoqsBmwWBs"
 	url = "https://discord.com/api/webhooks/835764960344670228/B4F2PTg5FCNzyMhwudqtC3Oz0-vbvY6AMToIPm987IkBTWpO9keQ0CZMR1oqulNUI4He"
 	url2 = "https://discord.com/api/webhooks/838271937888780318/jUoH7tbiyE6PZS-FMj34EBJM7CjY0S1NDgiipf_xd36kkbTMoc3ouQyIAMU2EJV6gH01"
+	url3 = ""
 	if show_active():
-		connect_websocket(url,url2,token,"+mt")
+		connect_websocket(url,url2,url3,token,"+mt")
 	else:
 		show_not_on()
 		time.sleep(30)
