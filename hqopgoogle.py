@@ -22,6 +22,7 @@ def show_active():
 
 def connect_websocket(url : str,url2 : str,token : str,cbc = None):
 	hook = Webhook(url)
+	hook2 = Webhook(url2)
 	headers = {"Authorization": f"Bearer {token}"}
 	url = requests.get(url="https://api-quiz.hype.space/shows/now").json()["broadcast"]["socketUrl"].replace("https","wss")
 	websocket = WebSocket(url)
