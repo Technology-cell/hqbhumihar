@@ -71,7 +71,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 				embed.add_field(name="**__Search with options__**",value=f"**Option 1 : {countop1}\nOption 2 : {countop2}\nOption 3 : {countop3}**")
 				embed.add_field(name="**__Special Search__**",value=f"**Option 1 : {find1}\nOption 2 : {find2}\nOption 3 : {find3}**")
 				embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/827177417092366396/834782681648595005/a7372eaaeafa289f28534ad39d96d517.gif")
-				embed.set_author(name="HQ Trivia",icon_url="https://cdn.discordapp.com/attachments/835091231301304340/836795845282103296/IMG_20210428_081743.jpg")
+				embed.set_author(name="HQ Trivia",icon_url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 				embed.set_footer(text="</> by Kumar Dhruv",icon_url="https://cdn.discordapp.com/attachments/827177417092366396/834785101153566720/IMG_20210130_095034.jpg")
 				marvel.send(cbc)
 				marvel.send(embed=embed)
