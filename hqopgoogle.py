@@ -96,6 +96,8 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 					uname = "Spiderman 2"
 				if name == "darrymask":
 					uname = "Spiderman 3"
+				if name == "GretlLeda65":
+					uname = "Legend"
 				if name == "maxvinila":
 					uname = "R K"
 				if answer == answersid[0]:
