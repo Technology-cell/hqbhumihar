@@ -125,9 +125,11 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 						correct = ans_str
 				advancing = data["advancingPlayersCount"]
 				eliminated = data["eliminatedPlayersCount"]
+				paysum = (5000)/(int(advancing))
+				payout = float("{:.2f}".format(paysum))
 				embed = discord.Embed(title="**Question Summary**",description="",color=000000)
 				embed.add_field(name="**Correct Answer :-**",value=f"**{correct}**")
-				embed.add_field(name="**Stats :-**",value=f"**⏺ Advancing Players : {advancing}\n⏺ Eliminated Players : {eliminated}\⏺ Current Payout : ${5000/advanicng}**")
+				embed.add_field(name="**Stats :-**",value=f"**• Advancing Players : {advancing}\n• Eliminated Players : {eliminated}\• Current Payout : ${payout}**")
 				hook.send(embed=embed)
 
 			if data["type"] == "gameSummary":
