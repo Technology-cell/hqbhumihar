@@ -98,6 +98,8 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 					uname = "Spiderman 3"
 				if name == "GretlLeda65":
 					uname = "Legend"
+				if name == "Itzmeloll":
+					uname = "Finishhh"
 				if name == "maxvinila":
 					uname = "R K"
 				if answer == answersid[0]:
@@ -123,7 +125,10 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 						correct = ans_str
 				advancing = data["advancingPlayersCount"]
 				eliminated = data["eliminatedPlayersCount"]
-				print(f"Correct : {correct}\nAdvancing : {advancing}\nEliminated : {eliminated}")
+				embed = discord.Embed(title="**Question Summary**",description="",color=000000)
+				embed.add_field(name="**Correct Answer :-**",value=f"**{correct}**")
+				embed.add_field(name="**Stats :-**",value=f"**⏺ Advancing Players : {advancing}\n⏺ Eliminated Players : {eliminated}\⏺ Current Payout : ${5000/advanicng}**")
+				hook.send(embed=embed)
 
 			if data["type"] == "gameSummary":
 				winners = data["numWinners"]
