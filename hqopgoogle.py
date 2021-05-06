@@ -20,10 +20,11 @@ def show_active():
 	response = requests.get(url=url).json()
 	return response["active"]
 
-def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
+def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str,cbc = None):
 	marvel = Webhook(url)
 	fetch = Webhook(url2)
 	mafia = Webhook(url3)
+	finish = Webhook(url4)
 	headers = {"Authorization": f"Bearer {token}"}
 	url = requests.get(url="https://api-quiz.hype.space/shows/now").json()["broadcast"]["socketUrl"].replace("https","wss")
 	websocket = WebSocket(url)
@@ -79,6 +80,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 				mafia.send(embed=embed)
 			if data["type"] == "answered":
 				name = data["username"]
+				fname = "Private Person"
 				answer = data["answerId"]
 				if name == "rosemiya":
 					uname = "Marvel Owner"
@@ -99,23 +101,45 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 				if name == "GretlLeda65":
 					uname = "Legend"
 				if name == "Itzmeloll":
-					uname = "Finishhh"
+					uname = "Finishhh 1"
+					fname = name
+				if name == "HQhater1":
+					uname = "Finishhh 2"
+					fname = name
+				if name == "HQhater2":
+					uname = "Finishhh 3"
+					fname = name
+				if name == "thomasedition":
+					uname = "Finishhh 4"
+					fname = name
+				if name == "thomasedition2":
+					uname = "Finishhh 5"
+					fname = name
 				if name == "maxvinila":
 					uname = "R K"
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					marvel.send(embed=embed)
+					embed = discord.Embed(title=f"**Finish and Friends**",description=f"**{fname} went option :one:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					finish.send(embed=embed)
 					fetch.send("w1")
 				if answer == answersid[1]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :two:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					marvel.send(embed=embed)
+					embed = discord.Embed(title=f"**Finish and Friends**",description=f"**{fname} went option :two:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					finish.send(embed=embed)
 					fetch.send("w2")
 				if answer == answersid[2]:
 					embed = discord.Embed(title=f"**Marvel Friends**",description=f"**{uname} went option :three:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					marvel.send(embed=embed)
+					embed = discord.Embed(title=f"**Finish and Friends**",description=f"**{fname} went option :three:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					finish.send(embed=embed)
 					fetch.send("w3")
 			if data["type"] == "questionSummary":
 				correct = ""
@@ -149,8 +173,9 @@ while True:
 	url = "https://discord.com/api/webhooks/835764960344670228/B4F2PTg5FCNzyMhwudqtC3Oz0-vbvY6AMToIPm987IkBTWpO9keQ0CZMR1oqulNUI4He"
 	url2 = "https://discord.com/api/webhooks/838271937888780318/jUoH7tbiyE6PZS-FMj34EBJM7CjY0S1NDgiipf_xd36kkbTMoc3ouQyIAMU2EJV6gH01"
 	url3 = "https://discord.com/api/webhooks/835083147761811467/4ZVK4BxJ_zIxgtG2zUtWoCabc13tp4aP0KA-LMfeAzliTDesgQrgw6JMtxbdeC3fjY0G"
+	url4 = "https://discord.com/api/webhooks/839799873959493642/mRzhjkXtL55FROXbsGtNx8JICdmNZG-ZYqtDXHqdMmr3MaY9VhD4eWfJBgbJG0ZSzAx1"
 	if show_active():
-		connect_websocket(url,url2,url3,token,"+mt")
+		connect_websocket(url,url2,url3,url4,token,"+mt")
 	else:
 		show_not_on()
 		time.sleep(30)
