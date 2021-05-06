@@ -119,6 +119,13 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 					fetch.send("w3")
 			if data["type"] == "questionSummary":
 				correct = ""
+				opno = ""
+				if option1 == correct:
+					opno = "Option :one:"
+				if option2 == correct:
+					opno = "Option :two:"
+				if option3 == correct:
+					opno = "Option :three:"
 				for answer in data["answerCounts"]:
 					ans_str = unidecode(answer["answer"])
 					if answer["correct"]:
@@ -128,7 +135,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,token : str,cbc = None):
 				paysum = (5000)/(int(advancing))
 				payout = float("{:.2f}".format(paysum))
 				embed = discord.Embed(title="**Question Summary**",description="",color=000000)
-				embed.add_field(name="**Correct Answer :-**",value=f"**{correct}**")
+				embed.add_field(name="**Correct Answer :-**",value=f"**{opno}.{correct}**")
 				embed.add_field(name="**Stats :-**",value=f"**• Advancing Players : {advancing}\n• Eliminated Players : {eliminated}\• Current Payout : ${payout}**")
 				hook.send(embed=embed)
 
