@@ -144,16 +144,16 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str,cbc
 			if data["type"] == "questionSummary":
 				correct = ""
 				opno = ""
+				for answer in data["answerCounts"]:
+					ans_str = unidecode(answer["answer"])
+					if answer["correct"]:
+						correct = ans_str
 				if option1 == correct:
 					opno = "Option :one:"
 				if option2 == correct:
 					opno = "Option :two:"
 				if option3 == correct:
 					opno = "Option :three:"
-				for answer in data["answerCounts"]:
-					ans_str = unidecode(answer["answer"])
-					if answer["correct"]:
-						correct = ans_str
 				advancing = data["advancingPlayersCount"]
 				eliminated = data["eliminatedPlayersCount"]
 				paysum = (5000)/(int(advancing))
