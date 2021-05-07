@@ -32,6 +32,7 @@ def connect_websocket(url : str,url2 : str,token : str):
 		if msg.name == "text":
 			message = msg.text
 			data = json.loads(message)
+			answersid = []
 			if data["type"] == "question":
 				question = data["question"]
 				answersid = [answer["answerId"] for answer in data["answers"]]
