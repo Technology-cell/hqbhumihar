@@ -33,10 +33,9 @@ def connect_websocket(url : str,url2 : str,token : str):
 			message = msg.text
 			data = json.loads(message)
 			if data["type"] == "question":
-				question = data["question"]
 				answersid = [answer["answerId"] for answer in data["answers"]]
 			if data["type"] == "answered":
-				name = data["username"][0:5]
+				name = data["username"][0:3]
 				answer = data["answerId"]
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{name} went option :one:**",color=000000)
