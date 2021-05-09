@@ -6,3 +6,4 @@ unidecode
 discord
 requests
 colorama
+bs4
