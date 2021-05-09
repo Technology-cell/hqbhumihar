@@ -202,6 +202,8 @@ def connect_websocket(socket_url, auth_token):
                 embed.add_field(name="All Options",value=f"[Click Here]({google_query}+{opt1}+{opt2}+{opt3})")
                 embed.set_thumbnail(url="https://media.discordapp.net/attachments/787386630885081118/787495811830513664/hq31.jpg?width=1025&height=450")
                 hook.send(embed=embed)
+                hook.send("Hq")
+                hook.send("+mt")
                 loop = asyncio.get_event_loop()
                 loop.run_until_complete(google(question,o1,o2,o3))
             elif message_data["type"] == "questionClosed":
