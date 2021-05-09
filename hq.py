@@ -206,6 +206,24 @@ def connect_websocket(socket_url, auth_token):
                 hook.send("+mt")
                 loop = asyncio.get_event_loop()
                 loop.run_until_complete(google(question,o1,o2,o3))
+            elif message_data["type"] == "answered":
+				name = message_data["username"][0:3]
+				answer = message_data["answerId"]
+				if answer == id1:
+					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{name} went option :one:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					challenge.send(embed=embed)
+					#fetch.send("w1")
+				if answer == id2:
+					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{name} went option :two:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					challenge.send(embed=embed)
+					#fetch.send("w2")
+				if answer == id3:
+					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{name} went option :three:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					challenge.send(embed=embed)
+					#fetch.send("w3")
             elif message_data["type"] == "questionClosed":
                 embed=discord.Embed(title=":alarm_clock: Time,s UP",description="",color=0x0800f0)
                 hook.send(embed=embed)
