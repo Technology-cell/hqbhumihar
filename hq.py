@@ -25,7 +25,7 @@ otp3 = []
 trickdata = []
 prizdata = []
 
-webhook_url=""
+webhook_url="https://discord.com/api/webhooks/840991903162957864/w_poXWoDETQvt8c_nVoyIj_SW524h4iu9nZs1O0qe4mN8c-KxETLCAXX5ft9Ehf_gDDI"
 
 try:
     hook = Webhook(webhook_url)
@@ -288,4 +288,4 @@ while True:
 
     else:
         show_not_on()
-        time.sleep(300)
+        time.sleep(30)
