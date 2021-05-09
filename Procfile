@@ -1,1 +1,1 @@
-worker: python hqopgoogle.py
+worker: python hq.py
