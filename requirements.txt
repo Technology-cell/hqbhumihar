@@ -7,3 +7,4 @@ discord
 requests
 colorama
 bs4
+aniso8601
