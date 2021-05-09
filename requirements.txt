@@ -1,6 +1,6 @@
 dhooks
 lomond
-
+termcolor
 
 unidecode
 discord
