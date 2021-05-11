@@ -35,27 +35,27 @@ def connect_websocket(url : str,url2 : str,token : str):
 			if data["type"] == "question":
 				answersid = [answer["answerId"] for answer in data["answers"]]
 			if data["type"] == "answered":
-				name = data["username"][0:3]
+				name = data["username"]
 				answer = data["answerId"]
 				if answer == answersid[0]:
-					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{name} went option :one:**",color=000000)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
 					fetch.send("w1")
 				if answer == answersid[1]:
-					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{name} went option :two:**",color=000000)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :two:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
 					fetch.send("w2")
 				if answer == answersid[2]:
-					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{name} went option :three:**",color=000000)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :three:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
 					fetch.send("w3")
 					
 while True:
-	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3Mzk3NDI3LCJ1c2VybmFtZSI6InNoYWhpZGFtdSIsImF2YXRhclVybCI6Imh0dHBzOi8vY2RuLnByb2QuaHlwZS5zcGFjZS9kYS9nb2xkLnBuZyIsInRva2VuIjoibXJkRDQyIiwicm9sZXMiOltdLCJjbGllbnQiOiJpT1MvMS43LjQgYjAiLCJndWVzdElkIjpudWxsLCJ2IjoxLCJpYXQiOjE2MTczNzY1OTAsImV4cCI6MTYyNTE1MjU5MCwiaXNzIjoiaHlwZXF1aXovMSJ9.L0bNNH0gbAWT4h43XlI2P-0HVBg1xVG77NZ6auq3wkY"
-	url = "https://discord.com/api/webhooks/834267847701954560/waz7W0RaKkIJzF5sEJDAd3mtE5YmmbAO1hTlRq_AiaD_pqJ31aucEFl18npKeA5L5fzy"
+	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3MzExMDU1LCJ1c2VybmFtZSI6IlNhcmlmNmdhZDMwIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9jZG4ucHJvZC5oeXBlLnNwYWNlL2RhL2dyZWVuLnBuZyIsInRva2VuIjoiRWEwTHFxIiwicm9sZXMiOltdLCJjbGllbnQiOiJBbmRyb2lkLzEuNTIuMyIsImd1ZXN0SWQiOm51bGwsInYiOjEsImlhdCI6MTYxNTAzNTU5NiwiZXhwIjoxNjIyODExNTk2LCJpc3MiOiJoeXBlcXVpei8xIn0.HQ32U49H_gzV-7-93XSwsJaj1qXaaAwUfkkHXnHHGPk"
+	url = "https://discord.com/api/webhooks/841643870042849341/bjyT1dKqVchWdhay1G0hyVcUFr2YneFY3J7ydgOWDUHXLgVDjGkDLbNuoS9qVUFD5HEV"
 	url2 = "https://discord.com/api/webhooks/838271937888780318/jUoH7tbiyE6PZS-FMj34EBJM7CjY0S1NDgiipf_xd36kkbTMoc3ouQyIAMU2EJV6gH01"
 	if show_active():
 		connect_websocket(url,url2,token)
