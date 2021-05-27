@@ -20,9 +20,11 @@ def show_active():
 	response = requests.get(url=url).json()
 	return response["active"]
 
-def connect_websocket(url : str,url2 : str,token : str):
-	challenge = Webhook(url)
+def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
+	ancient = Webhook(url)
 	fetch = Webhook(url2)
+	challenge = Webhook(url3)
+	#wiki = Webhook(url4)
 	headers = {"Authorization": f"Bearer {token}"}
 	url = requests.get(url="https://api-quiz.hype.space/shows/now").json()["broadcast"]["socketUrl"].replace("https","wss")
 	websocket = WebSocket(url)
@@ -37,18 +39,45 @@ def connect_websocket(url : str,url2 : str,token : str):
 			if data["type"] == "answered":
 				name = data["username"]
 				answer = data["answerId"]
+				if name == "JohnMasterLouis":
+					uname = "Billa Gang"
+				if name == "Luckytushar":
+					uname = "Angel"
+				if name == "amitkingg930":
+					uname = "Amit Pro"
+				if name == "eibpiter":
+					uname = "Makda Trusted"
+				if name == "Liam9708":
+					uname = "Kumar Dhruv"
+				if name == "Dunbar151":
+					uname = "Kalua"
+				if name == "rjtjgkk":
+					uname = "hukum"
+				if name == "Waldtraut63":
+					uname = "Rinku"
+				if name == "larkinfeli":
+					uname = "Ashwin"
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :one:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					ancient.send(embed=embed)
+					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
 					fetch.send("w1")
 				if answer == answersid[1]:
 					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :two:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					ancient.send(embed=embed)
+					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :two:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
 					fetch.send("w2")
 				if answer == answersid[2]:
 					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :three:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					ancient.send(embed=embed)
+					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :three:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
 					fetch.send("w3")
@@ -57,8 +86,10 @@ while True:
 	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3MzExMDU1LCJ1c2VybmFtZSI6IlNhcmlmNmdhZDMwIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9jZG4ucHJvZC5oeXBlLnNwYWNlL2RhL2dyZWVuLnBuZyIsInRva2VuIjoiRWEwTHFxIiwicm9sZXMiOltdLCJjbGllbnQiOiJBbmRyb2lkLzEuNTIuMyIsImd1ZXN0SWQiOm51bGwsInYiOjEsImlhdCI6MTYxNTAzNTU5NiwiZXhwIjoxNjIyODExNTk2LCJpc3MiOiJoeXBlcXVpei8xIn0.HQ32U49H_gzV-7-93XSwsJaj1qXaaAwUfkkHXnHHGPk"
 	url = "https://discord.com/api/webhooks/841643870042849341/bjyT1dKqVchWdhay1G0hyVcUFr2YneFY3J7ydgOWDUHXLgVDjGkDLbNuoS9qVUFD5HEV"
 	url2 = "https://discord.com/api/webhooks/838271937888780318/jUoH7tbiyE6PZS-FMj34EBJM7CjY0S1NDgiipf_xd36kkbTMoc3ouQyIAMU2EJV6gH01"
+	url3 = "https://discord.com/api/webhooks/840991903162957864/w_poXWoDETQvt8c_nVoyIj_SW524h4iu9nZs1O0qe4mN8c-KxETLCAXX5ft9Ehf_gDDI"
+	url4 = ""
 	if show_active():
-		connect_websocket(url,url2,token)
+		connect_websocket(url,url2,url3,url4,token)
 	else:
 		show_not_on()
 		time.sleep(30)
