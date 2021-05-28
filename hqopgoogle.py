@@ -60,34 +60,31 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 				if name == "larkinfeli":
 					uname = "Ashwin"
 				if answer == answersid[0]:
-					if name == "Liam9708" or "Dunbar151" or "QuincyNicolas":
-						embed = discord.Embed(title=f"Ancient Friends",description=f"{name} went option one",color=000000)
-						embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
-						ancient.send(embed=embed)
-						wiki.send("1c")
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :one:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					ancient.send(embed=embed)
+					wiki.send("1")
 					fetch.send("w1")
 				if answer == answersid[1]:
-					if name == "Liam9708" or "Dunbar151" or "QuincyNicolas":
-						embed = discord.Embed(title=f"Ancient Friends",description=f"{name} went option one",color=000000)
-						embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
-						ancient.send(embed=embed)
-						wiki.send("2c")
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :two:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :two:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					ancient.send(embed=embed)
+					wiki.send("2")
 					fetch.send("w2")
 				if answer == answersid[2]:
-					if name == "Liam9708" or "Dunbar151" or "QuincyNicolas":
-						embed = discord.Embed(title=f"Ancient Friends",description=f"{name} went option one",color=000000)
-						embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
-						ancient.send(embed=embed)
-						wiki.send("3c")
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :three:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :three:**",color=000000)
+					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
+					ancient.send(embed=embed)
+					wiki.send("3")
 					fetch.send("w3")
 					
 while True:
