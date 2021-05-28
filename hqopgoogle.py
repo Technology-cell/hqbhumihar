@@ -41,25 +41,13 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 				answer = data["answerId"]
 				bestie = ["QuincyNicolas","Liam9708","Dunbar151"]
 				if name == "QuincyNicolas":
-					uname = "Bugs Bunny"
-				if name == "JohnMasterLouis":
-					uname = "Billa Gang"
-				if name == "Luckytushar":
-					uname = "Angel"
-				if name == "amitkingg930":
-					uname = "Amit Pro"
-				if name == "eibpiter":
-					uname = "Makda Trusted"
+					uname = "Most Trusted Friend"
 				if name == "Liam9708":
-					uname = "Kumar Dhruv"
+					uname = "Dev Friend"
 				if name == "Dunbar151":
-					uname = "Kalua"
-				if name == "rjtjgkk":
-					uname = "hukum"
-				if name == "Waldtraut63":
-					uname = "Rinku"
+					uname = "Kalua Friend"
 				if name == "larkinfeli":
-					uname = "Ashwin"
+					uname = "Friend"
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
