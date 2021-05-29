@@ -40,6 +40,10 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 				name = data["username"]
 				answer = data["answerId"]
 				bestie = ["QuincyNicolas","Liam9708","Dunbar151"]
+				if name == "Shimmer8":
+					uname = "Only Fun"
+				if name == "Jack-hunter88":
+					uname = "Kuna"
 				if name == "QuincyNicolas":
 					uname = "Most Trusted Friend"
 				if name == "Liam9708":
@@ -83,7 +87,7 @@ while True:
 	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3MzExMDU1LCJ1c2VybmFtZSI6IlNhcmlmNmdhZDMwIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9jZG4ucHJvZC5oeXBlLnNwYWNlL2RhL2dyZWVuLnBuZyIsInRva2VuIjoiRWEwTHFxIiwicm9sZXMiOltdLCJjbGllbnQiOiJBbmRyb2lkLzEuNTIuMyIsImd1ZXN0SWQiOm51bGwsInYiOjEsImlhdCI6MTYxNTAzNTU5NiwiZXhwIjoxNjIyODExNTk2LCJpc3MiOiJoeXBlcXVpei8xIn0.HQ32U49H_gzV-7-93XSwsJaj1qXaaAwUfkkHXnHHGPk"
 	url = "https://discord.com/api/webhooks/841643870042849341/bjyT1dKqVchWdhay1G0hyVcUFr2YneFY3J7ydgOWDUHXLgVDjGkDLbNuoS9qVUFD5HEV"
 	url2 = "https://discord.com/api/webhooks/838271937888780318/jUoH7tbiyE6PZS-FMj34EBJM7CjY0S1NDgiipf_xd36kkbTMoc3ouQyIAMU2EJV6gH01"
-	url3 = "https://discord.com/api/webhooks/840991903162957864/w_poXWoDETQvt8c_nVoyIj_SW524h4iu9nZs1O0qe4mN8c-KxETLCAXX5ft9Ehf_gDDI"
+	url3 = "https://discord.com/api/webhooks/848013930252337183/9c33_Jpk3-suOWkJE-gJP46hxEEqVxmp4r5FsEMFOdSVPXXWGZfxQFIl5gd9t0zk28en"
 	url4 = "https://discord.com/api/webhooks/847470950442205224/ZKbwurLcLQycy7r9ci_dpgs28yzuY2uOa1S75pH1BLcTjzwV4QYdqZ0ZAzkAeG5Ju9gN"
 	if show_active():
 		connect_websocket(url,url2,url3,url4,token)
