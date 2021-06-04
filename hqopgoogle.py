@@ -39,7 +39,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 			if data["type"] == "answered":
 				name = data["username"]
 				answer = data["answerId"]
-				bestie = ["QuincyNicolas","Liam9708","Dunbar151"]
+				bestie = ["QuincyNicolas","Liam9708","Dunbar151","Jack-hunter88"]
 				if name == "Shimmer8":
 					uname = "Only Fun"
 				if name == "Jack-hunter88":
