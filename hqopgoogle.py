@@ -42,21 +42,27 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 				bestie = ["QuincyNicolas","Liam9708","Dunbar151","Jack-hunter88"]
 				if name == "Shimmer8":
 					uname = "Only Fun"
+					aname = "Fun Friend"
 				if name == "Jack-hunter88":
 					uname = "Kuna"
+					aname = "Savage Friend"
 				if name == "QuincyNicolas":
 					uname = "Most Trusted Friend"
+					aname = "Winner Friend"
 				if name == "Liam9708":
 					uname = "Dev Friend"
+					aname = "🤪 Friend"
 				if name == "Dunbar151":
 					uname = "Kalua Friend"
+					aname = "OP Friend"
 				if name == "larkinfeli":
 					uname = "Friend"
+					aname = "Ashwin Friend"
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
-					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :one:**",color=000000)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{aname} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					if name in bestie:
 						ancient.send(embed=embed)
@@ -66,7 +72,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :two:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
-					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :two:**",color=000000)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{aname} went option :two:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					if name in bestie:
 						ancient.send(embed=embed)
@@ -76,7 +82,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :three:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					challenge.send(embed=embed)
-					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{name} went option :three:**",color=000000)
+					embed = discord.Embed(title=f"**Ancient Friends**",description=f"**{aname} went option :three:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
 					if name in bestie:
 						ancient.send(embed=embed)
