@@ -39,7 +39,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 			if data["type"] == "answered":
 				name = data["username"]
 				answer = data["answerId"]
-				bestie = ["QuincyNicolas","Liam9708","Dunbar151","Jack-hunter88"]
+				bestie = ["QuincyNicolas","Jack-hunter88","Hanry9708","HQ_LOVER_123"]
 				if name == "Shimmer8":
 					uname = "Only Fun"
 					aname = "Fun Friend"
@@ -49,15 +49,15 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 				if name == "QuincyNicolas":
 					uname = "Most Trusted Friend"
 					aname = "Winner Friend"
-				if name == "Liam9708":
+				if name == "Hanry9708":
 					uname = "Dev Friend"
 					aname = "🤪 Friend"
 				if name == "Dunbar151":
 					uname = "Kalua Friend"
 					aname = "OP Friend"
-				if name == "larkinfeli":
-					uname = "Friend"
-					aname = "Ashwin Friend"
+				if name == "HQ_LOVER_123":
+					uname = "HQ LOVER"
+					aname = "Love Babbar"
 				if answer == answersid[0]:
 					embed = discord.Embed(title=f"**Challenge Friends**",description=f"**{uname} went option :one:**",color=000000)
 					embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/835091231301304340/838295779461431326/IMG_20210330_002943.jpg")
