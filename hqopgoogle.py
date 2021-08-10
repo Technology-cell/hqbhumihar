@@ -39,7 +39,10 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 			if data["type"] == "answered":
 				name = data["username"]
 				answer = data["answerId"]
-				bestie = ["QuincyNicolas","Jack-hunter88","Hanry9708","HQ_LOVER_123"]
+				bestie = ["QuincyNicolas","Jack-hunter88","Hanry9708","HQ_LOVER_123","zaimo4182","z635894"]
+				if name == "z635894":
+					uname = "Kalua Friend 2"
+					aname = "OP Friend 2"
 				if name == "Shimmer8":
 					uname = "Only Fun"
 					aname = "Fun Friend"
@@ -52,7 +55,7 @@ def connect_websocket(url : str,url2 : str,url3 : str,url4 : str,token : str):
 				if name == "Hanry9708":
 					uname = "Dev Friend"
 					aname = "🤪 Friend"
-				if name == "Dunbar151":
+				if name == "zaimo4182":
 					uname = "Kalua Friend"
 					aname = "OP Friend"
 				if name == "HQ_LOVER_123":
