@@ -96,7 +96,7 @@ while True:
 	token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI3MzExMDU1LCJ1c2VybmFtZSI6IlNhcmlmNmdhZDMwIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9jZG4ucHJvZC5oeXBlLnNwYWNlL2RhL2dyZWVuLnBuZyIsInRva2VuIjpudWxsLCJyb2xlcyI6W10sImNsaWVudCI6IkFuZHJvaWQvMS40OS44IiwiZ3Vlc3RJZCI6bnVsbCwidiI6MSwiaWF0IjoxNjMxMTgzODMyLCJleHAiOjE2Mzg5NTk4MzIsImlzcyI6Imh5cGVxdWl6LzEifQ.MKBpshrg_-XbJgRpVZPlbpbWyqsuKSqQqp-2GTFRAjk"
 	url = "https://discord.com/api/webhooks/841643870042849341/bjyT1dKqVchWdhay1G0hyVcUFr2YneFY3J7ydgOWDUHXLgVDjGkDLbNuoS9qVUFD5HEV"
 	url2 = "https://discord.com/api/webhooks/838271937888780318/jUoH7tbiyE6PZS-FMj34EBJM7CjY0S1NDgiipf_xd36kkbTMoc3ouQyIAMU2EJV6gH01"
-	url3 = "https://discord.com/api/webhooks/891949147702329384/HF-oKlTEM16u7zfNbYt34gv4Veo42Z6NhDZjX-xOXlLTCHKmpWpaSsRP9vhVH2bOQm8e"
+	url3 = "https://discord.com/api/webhooks/892055902650265660/dD6wM8r_98ScAe-3gX22rVzhIT9gw6lIkROIAOwfrHl0dysU3WHi5DskMqtV6W4xxGgM"
 	url4 = "https://discord.com/api/webhooks/847470950442205224/ZKbwurLcLQycy7r9ci_dpgs28yzuY2uOa1S75pH1BLcTjzwV4QYdqZ0ZAzkAeG5Ju9gN"
 	if show_active():
 		connect_websocket(url,url2,url3,url4,token)
